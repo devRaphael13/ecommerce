@@ -1,8 +1,10 @@
+import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import Categories from "./components/categories";
-import Fashion from "./components/fashion";
+import FashionList from "./components/fashion";
 import Header from "./components/header";
-import ProductList from "./components/product_list";
+import ProductList from "../components/product";
+import VendorList from "./components/vendor";
 
 
 function Home() {
@@ -20,9 +22,10 @@ function Home() {
                 <img src="" alt="Shipping image" />
             </section>
             <ProductList title="New Products" />
-            <Fashion gender="Male" />
-            <Fashion gender="Female" />
+            <FashionList />
             <ProductList title="Must have tech devices for you" />
+            <VendorList />
+            <Footer />
         </main>
     );
 }

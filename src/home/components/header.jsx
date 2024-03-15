@@ -1,3 +1,6 @@
+import { CiStar } from "react-icons/ci";
+import { GoArrowRight } from "react-icons/go";
+
 function Header() {
     return (
         <section>
@@ -12,7 +15,11 @@ function Header() {
                     <h3>product's name</h3>
                     <div>
                         <div>
-                            <p>stars</p>
+                            <CiStar />
+                            <CiStar />
+                            <CiStar />
+                            <CiStar />
+                            <CiStar />
                         </div>
                         <p> Number of customers</p>
                     </div>
@@ -20,7 +27,7 @@ function Header() {
                     <h2>Price</h2>
                     <div>
                         <a href="">View more</a>
-                        <p>Arrow svg</p>
+                        <GoArrowRight />
                     </div>
                 </div>
 
@@ -32,4 +39,4 @@ function Header() {
     );
 }
 
-export default Header
+export default Header;

@@ -1,3 +1,5 @@
+import { CiStar } from "react-icons/ci";
+
 function Product({ vendor, image, name, stars, customers, price }) {
     return (
         <article>
@@ -9,6 +11,11 @@ function Product({ vendor, image, name, stars, customers, price }) {
             <h3>{name}</h3>
             <div>
                 {stars}
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
                 <small>{customers} review</small>
             </div>
             <h2>{price}</h2>
@@ -16,4 +23,16 @@ function Product({ vendor, image, name, stars, customers, price }) {
     );
 }
 
-export default Product
+function ProductList({ title }) {
+    return (
+        <section>
+            <h1>{title}</h1>
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+        </section>
+    );
+}
+
+export default ProductList;

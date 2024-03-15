@@ -1,9 +1,9 @@
+import { FiArrowRightCircle } from "react-icons/fi";
+
 function Fashion({ gender, url, category }) {
     return (
-        <section className={gender}>
-            <h1>
-                {gender}
-            </h1>
+        <article className={gender}>
+            <h1>{gender}</h1>
             <div>
                 <h3>Fashion styles for him/her</h3>
                 <p>Shop male/female clothings shoes and jwelleries</p>
@@ -11,15 +11,24 @@ function Fashion({ gender, url, category }) {
                 <a href="#">
                     <div>
                         <img src="" alt="sub category image" />
-                        arrow svg
+                        <FiArrowRightCircle />
                     </div>
                 </a>
             </div>
             <div>
                 <img src="" alt="Category Image" />
             </div>
+        </article>
+    );
+}
+
+function FashionList() {
+    return (
+        <section>
+            <Fashion gender="male" />
+            <Fashion gender="female" />
         </section>
     );
 }
 
-export default Fashion
+export default FashionList;
