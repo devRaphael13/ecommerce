@@ -127,3 +127,40 @@
     height: 300px;
     object-fit: cover;
 }
+
+/* Deals  */
+
+.deals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.deal {
+    display: flex;
+    gap: 0.25rem;
+    background: var(--s-pink);
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.deal>div:first-child>div {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+}
+
+.deal>div:last-child {
+    width: 30%;
+}
+
+.deal img {
+    width: 100%;
+}
+
+.deal a {
+    text-decoration: underline;
+}
+.deal p{
+    margin-bottom: 0.25rem;
+}

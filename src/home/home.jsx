@@ -5,6 +5,7 @@ import FashionList from "./components/fashion";
 import Header from "./components/header";
 import ProductList from "../components/product";
 import VendorList from "./components/vendor";
+import Deals from "./components/deals";
 
 import "./home.css"
 
@@ -15,8 +16,9 @@ function Home() {
             <NavBar />
             <Header />
             <Categories />
+            <Deals />
             <section>
-                <div>
+                <div className="Shipping">
                     <h1>ECOMMERCE DELIVERS TO YOU</h1>
                     <p>World-wide shipping for all products. We ship to over 100 countries and regions, get products shipped right to your door step.</p>
                 </div>
