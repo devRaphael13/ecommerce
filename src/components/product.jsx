@@ -23,14 +23,14 @@ function Product({ vendor, image, name, stars, customers, price }) {
     );
 }
 
-function ProductList({ title }) {
+function ProductList({ title, name }) {
     return (
         <section>
-            <h1>{title}</h1>
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            <h3>{title}</h3>
+            <Product name={name} vendor="vendor"/>
+            <Product name={name} vendor="vendor"/>
+            <Product name={name} vendor="vendor"/>
+            <Product name={name} vendor="vendor"/>
         </section>
     );
 }

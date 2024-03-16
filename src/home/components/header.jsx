@@ -5,7 +5,7 @@ function Header() {
     return (
         <section>
             <div>
-                <h1>Category Name</h1>
+                <h1>CATEGORY NAME</h1>
                 <p>Category description</p>
                 <a href="#">View more</a>
             </div>

@@ -3,7 +3,6 @@ import { FiArrowRightCircle } from "react-icons/fi";
 function Fashion({ gender, url, category }) {
     return (
         <article className={gender}>
-            <h1>{gender}</h1>
             <div>
                 <h3>Fashion styles for him/her</h3>
                 <p>Shop male/female clothings shoes and jwelleries</p>

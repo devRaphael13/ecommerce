@@ -23,7 +23,7 @@ function Home() {
             </section>
             <ProductList title="New Products" />
             <FashionList />
-            <ProductList title="Must have tech devices for you" />
+            <ProductList title="Must have tech devices for you" name="test" />
             <VendorList />
             <Footer />
         </main>
