@@ -10,7 +10,7 @@
     margin-top: 0;
     padding: 6rem;
     padding-bottom: 0;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     overflow: hidden;
 }
 
@@ -30,7 +30,7 @@
     display: inline-block;
     border: 2px solid var(--accent);
     padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    border-radius: 0.125rem;
     color: var(--accent);
     margin: 1rem 0;
 }
@@ -163,4 +163,24 @@
 }
 .deal p{
     margin-bottom: 0.25rem;
+}
+
+/* Shipping  */
+.shipping {
+    display: flex;
+    padding: 2rem 4rem;
+    background: var(--p-gray);
+    align-items: center;
+    border-radius: 0.25rem;
+}
+
+.shipping>div:first-child {
+    width: 60%;
+}
+.shipping>div:last-child {
+    width: 40%;
+}
+
+.shipping img {
+    width: 100%;
 }

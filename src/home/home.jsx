@@ -7,8 +7,9 @@ import ProductList from "../components/product";
 import VendorList from "./components/vendor";
 import Deals from "./components/deals";
 
-import "./home.css"
+import "./home.css";
 
+import productImg from "./assets/tanjiro5.jpg";
 
 function Home() {
     return (
@@ -18,11 +19,15 @@ function Home() {
             <Categories />
             <Deals />
             <section>
-                <div className="Shipping">
-                    <h1>ECOMMERCE DELIVERS TO YOU</h1>
-                    <p>World-wide shipping for all products. We ship to over 100 countries and regions, get products shipped right to your door step.</p>
+                <div className="shipping">
+                    <div>
+                        <h1>ECOMMERCE DELIVERS TO YOU</h1>
+                        <p>World-wide shipping for all products. We ship to over 100 countries and regions, get products shipped right to your door step.</p>
+                    </div>
+                    <div>
+                        <img src={productImg} alt="Shipping image" />
+                    </div>
                 </div>
-                <img src="" alt="Shipping image" />
             </section>
             <ProductList title="New Products" />
             <FashionList />
