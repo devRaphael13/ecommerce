@@ -15,7 +15,6 @@ function Home() {
             <NavBar />
             <Header />
             <Categories />
-
             <section>
                 <div>
                     <h1>ECOMMERCE DELIVERS TO YOU</h1>
