@@ -1,6 +1,7 @@
 import { GoSearch } from "react-icons/go";
+import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
-import { BsCart2 } from "react-icons/bs";
+import { IoCartOutline } from "react-icons/io5";
 
 function NavBar() {
     return (
@@ -27,14 +28,14 @@ function NavBar() {
 
             <ul>
                 <li>
-                    <GoSearch />
+                    <IoSearchOutline />
                 </li>
                 <li>
                     <FiUser />
                 </li>
                 <li>
                     <button>
-                        <BsCart2 />
+                        <IoCartOutline />
                     </button>
                 </li>
             </ul>

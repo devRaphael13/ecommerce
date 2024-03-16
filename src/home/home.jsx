@@ -6,6 +6,8 @@ import Header from "./components/header";
 import ProductList from "../components/product";
 import VendorList from "./components/vendor";
 
+import "./home.css"
+
 
 function Home() {
     return (

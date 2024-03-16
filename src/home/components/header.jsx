@@ -1,19 +1,21 @@
 import { CiStar } from "react-icons/ci";
 import { GoArrowRight } from "react-icons/go";
+import productImg from "../assets/tanjiro5.jpg"
 
-function Header() {
+function Featured({ name, text, product }) {
     return (
-        <section>
-            <div>
-                <h1>CATEGORY NAME</h1>
-                <p>Category description</p>
-                <a href="#">View more</a>
+        <article className="featured-container">
+            <div className="featured-category">
+                <h1>SHOP {name}</h1>
+                <p>{text}</p>
+                <a className="btn" href="#">View more</a>
             </div>
-            <div>
+
+            <div className="featured-product">
                 <div>
-                    <small>product's vendor</small>
-                    <h3>product's name</h3>
-                    <div>
+                    <small>Versace</small>
+                    <h3>Rose gold and black bracelets for Men</h3>
+                    <div className="featured-product__review">
                         <div>
                             <CiStar />
                             <CiStar />
@@ -21,20 +23,30 @@ function Header() {
                             <CiStar />
                             <CiStar />
                         </div>
-                        <p> Number of customers</p>
+                        <p>45 reviews</p>
                     </div>
 
-                    <h2>Price</h2>
-                    <div>
+                    <h2>$49.99</h2>
+                    <div className="featured-product__details">
                         <a href="">View more</a>
                         <GoArrowRight />
                     </div>
                 </div>
 
                 <div>
-                    <img src="" alt="product image" />
+                    <img src={productImg} alt="product image" />
                 </div>
             </div>
+        </article>
+    );
+}
+
+function Header() {
+    return (
+        <section className="header">
+            <Featured name="Men's Fashion" text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea sint neque, ipsum laboriosam perferendis" />
+            <Featured />
+            <Featured />
         </section>
     );
 }
