@@ -1,21 +1,23 @@
 import { FiArrowRightCircle } from "react-icons/fi";
+import productImg from "../assets/bracelets.png";
 
-function Fashion({ gender, url, category }) {
+function Fashion({ gender, gender_light, url, category, pronoun }) {
     return (
-        <article className={gender}>
+        <article className={`fashion ${gender}`}>
             <div>
-                <h3>Fashion styles for him/her</h3>
-                <p>Shop male/female clothings shoes and jwelleries</p>
+                <h3>Fashion styles for {pronoun} </h3>
+                <p>Shop {gender} clothings shoes and jwelleries</p>
 
                 <a href="#">
-                    <div>
-                        <img src="" alt="sub category image" />
+                    <div className={`${gender_light}`}>
+                        <img src={productImg} alt="sub category image" />
+                        <p>Top product in these category</p>
                         <FiArrowRightCircle />
                     </div>
                 </a>
             </div>
-            <div>
-                <img src="" alt="Category Image" />
+            <div className="fashion__category-image">
+                <img src={productImg} alt="Category Image" />
             </div>
         </article>
     );
@@ -23,9 +25,9 @@ function Fashion({ gender, url, category }) {
 
 function FashionList() {
     return (
-        <section>
-            <Fashion gender="male" />
-            <Fashion gender="female" />
+        <section className="fashions">
+            <Fashion gender="male" gender_light="malelight" pronoun="Him" />
+            <Fashion gender="female" gender_light="femalelight" pronoun="Her" />
         </section>
     );
 }

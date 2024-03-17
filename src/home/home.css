@@ -1,6 +1,6 @@
 :root {
-    --p-gray: #D8DEDA;
-    --s-pink: #f2e7ba;
+    --p-gray: #E6EAE7;
+    --s-pink: #F7EFD3;
     --accent: #f59b2b;
 }
 
@@ -111,7 +111,7 @@
 .category {
     background: var(--p-gray);
     border-radius: 0.25rem;
-    padding: 0.5rem;
+    padding: 1rem;
     flex-shrink: 0;
     width: calc(100%/5)
 }
@@ -197,7 +197,7 @@
 .product {
     background: var(--p-gray);
     border-radius: 0.25rem;
-    padding: 0.5rem;
+    padding: 1rem;
     margin-top: 1rem;
 }
 
@@ -221,4 +221,60 @@
 .product small {
     text-transform: uppercase;
     opacity: 0.8;
+}
+
+/* Fashion Section  */
+.fashions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.5rem;
+}
+
+.fashion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.fashion a>div {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.fashion h3 {
+    margin-bottom: 0.25rem;
+}
+
+.fashion a img {
+    width: 50px;
+}
+
+.fashion__category-image {
+}
+
+.fashion__category-image>img {
+    width: 150px;
+    height: 200px;
+}  
+
+.male {
+    background: var(--p-gray)
+}
+
+.malelight {
+    background: #D8DEDA;
+}
+
+.female {
+    background: var(--s-pink);
+}
+
+.femalelight {
+    background: #f2e7ba;
 }

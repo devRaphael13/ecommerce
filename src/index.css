@@ -1,6 +1,5 @@
 :root {
     --p-gray: #D8DEDA;
-    --s-pink: #BDB2BA;
     --accent: #5D5134;
 
 }
@@ -62,4 +61,8 @@ ul {
 
 section {
     margin: 3rem 4rem;
+}
+
+footer {
+    background: var(--p-gray);
 }
