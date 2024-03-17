@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            The Freaking footer
+            <h3>Copyright</h3>
         </footer>
     )
 }
