@@ -69,6 +69,33 @@ footer {
 }
 
 footer h3 {
-    font-weight:lighter;
+    font-weight: lighter;
     text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+    h1 {
+        font-size: x-large
+    }
+
+    h2,
+    h3 {
+        font-size: large
+    }
+    
+    nav {
+        padding: 0.5rem;
+    }
+
+    ul {
+        gap: 0.75rem;
+    }
+
+    p {
+        font-size: small;
+    }
+
+    section {
+        margin: 0.5rem;
+    }
 }
