@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 
-.header>article:not(:first-child) {
+.featured-container:not(:first-child) {
     padding-top: 10rem;
 }
 
@@ -23,6 +23,16 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding-bottom: 1rem;
+}
+
+@keyframes loop {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
 }
 
 .featured-category>a {
@@ -160,7 +170,8 @@
 .deal a {
     text-decoration: underline;
 }
-.deal p{
+
+.deal p {
     margin-bottom: 0.25rem;
 }
 
@@ -177,6 +188,7 @@
 .shipping>div:first-child {
     width: 60%;
 }
+
 .shipping>div:last-child {
     width: max-content;
 }
@@ -255,13 +267,12 @@
     width: 50px;
 }
 
-.fashion__category-image {
-}
+.fashion__category-image {}
 
 .fashion__category-image>img {
     width: 150px;
     height: 200px;
-}  
+}
 
 .male {
     background: var(--p-gray)
@@ -277,4 +288,19 @@
 
 .femalelight {
     background: #f2e7ba;
+}
+
+/* Vendor  */
+.vendors>div {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.vendors article {
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    background: var(--p-gray);
 }

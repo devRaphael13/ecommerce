@@ -45,8 +45,6 @@ function Header() {
     return (
         <section className="header">
             <Featured name="Men's Fashion" text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea sint neque, ipsum laboriosam perferendis" />
-            <Featured />
-            <Featured />
         </section>
     );
 }
