@@ -1,6 +1,6 @@
 import { CiStar } from "react-icons/ci";
 import { GoArrowRight } from "react-icons/go";
-import productImg from "../assets/tanjiro5.jpg"
+import productImg from "../assets/bracelets.png"
 
 function Featured({ name, text, product }) {
     return (

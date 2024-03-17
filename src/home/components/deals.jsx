@@ -1,5 +1,5 @@
 import { GoArrowRight } from "react-icons/go";
-import productImg from "../assets/tanjiro5.jpg";
+import productImg from "../assets/bracelets.png";
 
 function Deal({ name, text, image }) {
     return (

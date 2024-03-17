@@ -9,7 +9,7 @@ function NavBar() {
             <ul>
                 <li>
                     <a href="#">
-                        <h3>LOGO</h3>
+                        <h3>ECOMMERCE</h3>
                     </a>
                 </li>
                 <li>

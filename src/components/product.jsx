@@ -1,24 +1,27 @@
 import { CiStar } from "react-icons/ci";
+import productImg from "../home/assets/bracelets.png";
 
 function Product({ vendor, image, name, stars, customers, price }) {
     return (
-        <article>
+        <article className="product">
             <div>
-                <img src={image} alt="" />
+                <img src={productImg} alt="" />
             </div>
 
-            <small>{vendor}</small>
-            <h3>{name}</h3>
+            <small>Versace</small>
+            <h3>Product Name</h3>
             <div>
-                {stars}
-                <CiStar />
-                <CiStar />
-                <CiStar />
-                <CiStar />
-                <CiStar />
-                <small>{customers} review</small>
+                <div>
+                    <CiStar />
+                    <CiStar />
+                    <CiStar />
+                    <CiStar />
+                    <CiStar />
+                </div>
+                <p>45 reviews</p>
             </div>
-            <h2>{price}</h2>
+
+            <h2>$49.99</h2>
         </article>
     );
 }
@@ -27,10 +30,13 @@ function ProductList({ title, name }) {
     return (
         <section>
             <h3>{title}</h3>
-            <Product name={name} vendor="vendor"/>
-            <Product name={name} vendor="vendor"/>
-            <Product name={name} vendor="vendor"/>
-            <Product name={name} vendor="vendor"/>
+            <div className="product-list">
+                <Product name={name} vendor="vendor" />
+                <Product name={name} vendor="vendor" />
+                <Product name={name} vendor="vendor" />
+                <Product name={name} vendor="vendor" />
+                <Product name={name} vendor="vendor" />
+            </div>
         </section>
     );
 }

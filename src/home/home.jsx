@@ -9,7 +9,7 @@ import Deals from "./components/deals";
 
 import "./home.css";
 
-import productImg from "./assets/tanjiro5.jpg";
+import productImg from "./assets/bracelets.png";
 
 function Home() {
     return (
@@ -30,6 +30,7 @@ function Home() {
                 </div>
             </section>
             <ProductList title="New Products" />
+            {/* <div>&#9632;</div> */}
             <FashionList />
             <ProductList title="Must have tech devices for you" name="test" />
             <VendorList />
