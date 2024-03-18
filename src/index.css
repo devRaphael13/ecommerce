@@ -73,16 +73,31 @@ footer h3 {
     text-align: center;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1000px) {
     h1 {
         font-size: x-large
+    }
+
+    nav {
+        padding: 2rem;
     }
 
     h2,
     h3 {
         font-size: large
     }
-    
+
+    ul {
+        gap: 1rem;
+    }
+
+    section {
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
     nav {
         padding: 0.5rem;
     }

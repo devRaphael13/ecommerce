@@ -11,7 +11,7 @@ function Fashion({ gender, gender_light, url, category, pronoun }) {
                 <a href="#">
                     <div className={`${gender_light}`}>
                         <img src={productImg} alt="sub category image" />
-                        <p>Top product in these category</p>
+                        <p>Top Products</p>
                         <FiArrowRightCircle />
                     </div>
                 </a>
