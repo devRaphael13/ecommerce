@@ -1,7 +1,8 @@
 import { FiArrowRightCircle } from "react-icons/fi";
-import productImg from "../assets/bracelets.png";
+import femaleImg from "../assets/women2.png";
+import maleImg from "../assets/men3.png"
 
-function Fashion({ gender, gender_light, url, category, pronoun }) {
+function Fashion({ gender, gender_light, url, category, pronoun, image }) {
     return (
         <article className={`fashion ${gender}`}>
             <div>
@@ -10,14 +11,10 @@ function Fashion({ gender, gender_light, url, category, pronoun }) {
 
                 <a href="#">
                     <div className={`${gender_light}`}>
-                        <img src={productImg} alt="sub category image" />
-                        <p>Top Products</p>
+                        <p>View Top Products</p>
                         <FiArrowRightCircle />
                     </div>
                 </a>
-            </div>
-            <div className="fashion__category-image">
-                <img src={productImg} alt="Category Image" />
             </div>
         </article>
     );
@@ -26,8 +23,8 @@ function Fashion({ gender, gender_light, url, category, pronoun }) {
 function FashionList() {
     return (
         <section className="fashions">
-            <Fashion gender="male" gender_light="malelight" pronoun="Him" />
-            <Fashion gender="female" gender_light="femalelight" pronoun="Her" />
+            <Fashion gender="male" gender_light="malelight" pronoun="Him" image={maleImg} />
+            <Fashion gender="female" gender_light="femalelight" pronoun="Her" image={femaleImg}/>
         </section>
     );
 }

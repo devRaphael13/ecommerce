@@ -1,42 +1,44 @@
-import { CiStar } from "react-icons/ci";
+import { FaStar } from "react-icons/fa6";
 import productImg from "../home/assets/bracelets.png";
 
-function Product({ vendor, image, name, stars, customers, price }) {
+function Product({ product }) {
+    const starMap = [];
+    let stars = product.stars;
+
+    for (let i = 0; i < 5; i++) {
+        if (stars) {
+            starMap.push(<FaStar className="yellow_star" />);
+            stars -= 1
+        } else {
+            starMap.push(<FaStar className="star"/>);
+        }
+    }
+
     return (
         <article className="product">
             <div>
-                <img src={productImg} alt="" />
+                <img src={product.display_image} alt="" />
             </div>
 
-            <small>Versace</small>
-            <h3>Product Name</h3>
+            <small>{product.vendor.name}</small>
+            <h3>{product.name}</h3>
             <div>
                 <div>
-                    <CiStar />
-                    <CiStar />
-                    <CiStar />
-                    <CiStar />
-                    <CiStar />
+                    {starMap}
                 </div>
-                <p>45 reviews</p>
+                <p>{product.reviews} reviews</p>
             </div>
 
-            <h2>$49.99</h2>
+            <h2>${product.price / 100}</h2>
         </article>
     );
 }
 
-function ProductList({ title, name }) {
+function ProductList({ title, data }) {
     return (
         <section>
             <h3>{title}</h3>
-            <div className="product-list">
-                <Product name={name} vendor="vendor" />
-                <Product name={name} vendor="vendor" />
-                <Product name={name} vendor="vendor" />
-                <Product name={name} vendor="vendor" />
-                <Product name={name} vendor="vendor" />
-            </div>
+            <div className="product-list">{data ? data.results.map((product) => <Product key={product.id} product={product} />) : <h3>No Products available</h3>}</div>
         </section>
     );
 }

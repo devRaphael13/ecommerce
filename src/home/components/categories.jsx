@@ -1,18 +1,14 @@
 import { GoArrowRight } from "react-icons/go";
-import productImg from "../assets/bracelets.png";
 
-function Category({name}) {
+function Category({ name}) {
     return (
         <article className="category">
-            <div>
-                <img src={productImg} alt="Category picture" />
-            </div>
-            <h3>Category Name</h3>
+            <h3>{name}</h3>
         </article>
     );
 }
 
-function Categories() {
+function Categories({data}) {
     return (
         <section className="categories">
             <div>
@@ -23,13 +19,9 @@ function Categories() {
                 </div>
             </div>
             <div className="category-container">
-                <Category />
-                <Category />
-                <Category />
-                <Category />
-                <Category />
-                <Category />
-                <Category />
+                {
+                    data ? data.results.map((cat) => <Category key={cat.id} name={cat.name} />): <h3>No categories available</h3>
+                }
             </div>
         </section>
     );

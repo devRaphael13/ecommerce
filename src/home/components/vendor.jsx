@@ -1,29 +1,19 @@
 import productImg from "../assets/bracelets.png";
 
-function Vendor({ name, image }) {
+function Vendor({ vendor }) {
+    const tbackground = vendor.logo ? `url(${vendor.logo})` : "#E6EAE7";
     return (
-        <article style={{ background: `url(${productImg})`, backgroundPosition: "center" }}>
-            <h3>{name}</h3>
+        <article style={{ background: tbackground, backgroundPosition: "center" }}>
+            <h3>{vendor.name}</h3>
         </article>
     );
 }
 
-function VendorList() {
+function VendorList({ data }) {
     return (
         <section className="vendors">
             <h3>Shop by vendors</h3>
-            <div>
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-                <Vendor name="Versace" image={productImg} />
-            </div>
+            <div>{data ? data.results.map((vendor) => <Vendor key={vendor.id} vendor={vendor} />) : <h3>No Vendors available</h3>}</div>
         </section>
     );
 }

@@ -73,7 +73,7 @@ footer h3 {
     text-align: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     h1 {
         font-size: x-large
     }
@@ -84,7 +84,7 @@ footer h3 {
 
     h2,
     h3 {
-        font-size: large
+        font-size: large;
     }
 
     ul {

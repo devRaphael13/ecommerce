@@ -1,19 +1,29 @@
-import { GoSearch } from "react-icons/go";
+import { useState, useEffect } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 function NavBar() {
-    const menu_items = document.getElementsByClassName("menu");
+    const [size, setSize] = useState(window.innerWidth);
+    
+    useEffect(() => {
+        const menu_items = document.getElementsByClassName("items");
+        const menu = document.getElementById("menu")
 
-    window.addEventListener("resize", (e) => {
         for (let x of menu_items) {
-            if (window.innerWidth < 720) {
+            if (size < 720) {
                 x.style.display = "none";
+                menu.style.display = "block"
             } else {
                 x.style.display = "block";
+                menu.style.display = "none"
             }
         }
+    }, [size]);
+
+    window.addEventListener("resize", (e) => {
+        setSize(window.innerWidth)
     });
 
     return (
@@ -27,13 +37,16 @@ function NavBar() {
                 <li>
                     <a href="#">Products</a>
                 </li>
-                <li className="menu">
+                <li className="items">
+                    <a href="#">Category</a>
+                </li>
+                <li className="items">
                     <a href="#">Today's Deals</a>
                 </li>
-                <li className="menu">
+                <li className="items">
                     <a href="#">Gift Cards</a>
                 </li>
-                <li className="menu">
+                <li className="items">
                     <a href="#">Registry & Gifting</a>
                 </li>
             </ul>
@@ -48,6 +61,12 @@ function NavBar() {
                 <li>
                     <button>
                         <IoCartOutline />
+                    </button>
+                </li>
+
+                <li id="menu">
+                    <button>
+                        <HiOutlineMenuAlt3 />
                     </button>
                 </li>
             </ul>

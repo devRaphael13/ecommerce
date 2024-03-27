@@ -1,5 +1,4 @@
 import { GoArrowRight } from "react-icons/go";
-import productImg from "../assets/bracelets.png";
 
 function Deal({ name, text, image }) {
     return (
@@ -11,9 +10,6 @@ function Deal({ name, text, image }) {
                     <a href="">See more</a>
                     <GoArrowRight />
                 </div>
-            </div>
-            <div>
-                <img src={productImg} alt="" />
             </div>
         </div>
     );

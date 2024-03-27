@@ -1,4 +1,6 @@
 import { CiStar } from "react-icons/ci";
+import { FaStar } from "react-icons/fa6";
+
 import { GoArrowRight } from "react-icons/go";
 import productImg from "../assets/bracelets.png"
 
@@ -8,7 +10,9 @@ function Featured({ name, text, product }) {
             <div className="featured-category">
                 <h1>SHOP {name}</h1>
                 <p>{text}</p>
-                <a className="btn" href="#">View more</a>
+                <a className="btn" href="#">
+                    View more
+                </a>
             </div>
 
             <div className="featured-product">
@@ -17,11 +21,11 @@ function Featured({ name, text, product }) {
                     <h3>Rose gold and black bracelets for Men</h3>
                     <div className="featured-product__review">
                         <div>
-                            <CiStar />
-                            <CiStar />
-                            <CiStar />
-                            <CiStar />
-                            <CiStar />
+                            <FaStar className="star" />
+                            <FaStar className="star" />
+                            <FaStar className="star" />
+                            <FaStar className="star" />
+                            <FaStar className="star" />
                         </div>
                         <p>45 reviews</p>
                     </div>
