@@ -12,25 +12,27 @@ import dataFetch from "../utils";
 
 import "./home.css";
 
-import productImg from "./assets/bracelets.png";
+import ecommerce from "./assets/shopping.png";
 
 function Home() {
     const [categories, setCategories] = useState(null);
     const [newProducts, setNewProducts] = useState(null);
     const [techProducts, setTechProducts] = useState(null);
     const [vendors, setVendors] = useState(null);
+    const [featured, setFeatured] = useState(null)
 
     useEffect(() => {
         dataFetch("https://django-ecommerce-api.vercel.app/api/categories/", setCategories);
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&ordering=-datetime_created", setNewProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&category=14", setTechProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/vendors/", setVendors);
+        dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=1", setFeatured);
     }, []);
 
     return (
         <main>
             <NavBar />
-            <Header />
+            <Header data={featured} />
             <Categories data={categories} />
             <Deals />
             <section>
@@ -40,7 +42,7 @@ function Home() {
                         <p>World-wide shipping for all products. We ship to over 100 countries and regions, get products shipped right to your door step.</p>
                     </div>
                     <div>
-                        <img src={productImg} alt="Shipping image" />
+                        <img src={ecommerce} alt="Shipping image" />
                     </div>
                 </div>
             </section>

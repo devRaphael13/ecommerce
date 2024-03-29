@@ -1,6 +1,7 @@
 import { GoArrowRight } from "react-icons/go";
+import Spinner from "../../components/spinner";
 
-function Category({ name}) {
+function Category({ name }) {
     return (
         <article className="category">
             <h3>{name}</h3>
@@ -8,7 +9,7 @@ function Category({ name}) {
     );
 }
 
-function Categories({data}) {
+function Categories({ data }) {
     return (
         <section className="categories">
             <div>
@@ -18,11 +19,11 @@ function Categories({data}) {
                     <GoArrowRight />
                 </div>
             </div>
-            <div className="category-container">
-                {
-                    data ? data.results.map((cat) => <Category key={cat.id} name={cat.name} />): <h3>No categories available</h3>
-                }
-            </div>
+            {data ? (
+                <div className="category-container">{data.count ? data.results.map((cat) => <Category key={cat.id} name={cat.name} />) : <p>There are no Categories at the moment</p>}</div>
+            ) : (
+                <Spinner />
+            )}
         </section>
     );
 }

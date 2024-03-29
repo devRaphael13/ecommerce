@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import productImg from "../home/assets/bracelets.png";
+import Spinner from "./spinner";
 
 function Product({ product }) {
     const starMap = [];
@@ -8,9 +9,9 @@ function Product({ product }) {
     for (let i = 0; i < 5; i++) {
         if (stars) {
             starMap.push(<FaStar className="yellow_star" />);
-            stars -= 1
+            stars -= 1;
         } else {
-            starMap.push(<FaStar className="star"/>);
+            starMap.push(<FaStar className="star" />);
         }
     }
 
@@ -23,9 +24,7 @@ function Product({ product }) {
             <small>{product.vendor.name}</small>
             <h3>{product.name}</h3>
             <div>
-                <div>
-                    {starMap}
-                </div>
+                <div>{starMap}</div>
                 <p>{product.reviews} reviews</p>
             </div>
 
@@ -36,9 +35,13 @@ function Product({ product }) {
 
 function ProductList({ title, data }) {
     return (
-        <section>
+        <section className="product-section">
             <h3>{title}</h3>
-            <div className="product-list">{data ? data.results.map((product) => <Product key={product.id} product={product} />) : <h3>No Products available</h3>}</div>
+            {data ? (
+                <div className="product-list">{data.count ? data.results.map((product) => <Product key={product.id} product={product} />) : <p>No Products at the moment</p>}</div>
+            ) : (
+                <Spinner />
+            )}
         </section>
     );
 }

@@ -1,6 +1,4 @@
 import { FiArrowRightCircle } from "react-icons/fi";
-import femaleImg from "../assets/women2.png";
-import maleImg from "../assets/men3.png"
 
 function Fashion({ gender, gender_light, url, category, pronoun, image }) {
     return (
@@ -23,8 +21,8 @@ function Fashion({ gender, gender_light, url, category, pronoun, image }) {
 function FashionList() {
     return (
         <section className="fashions">
-            <Fashion gender="male" gender_light="malelight" pronoun="Him" image={maleImg} />
-            <Fashion gender="female" gender_light="femalelight" pronoun="Her" image={femaleImg}/>
+            <Fashion gender="male" gender_light="malelight" pronoun="Him"/>
+            <Fashion gender="female" gender_light="femalelight" pronoun="Her"/>
         </section>
     );
 }

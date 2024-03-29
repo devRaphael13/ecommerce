@@ -1,4 +1,4 @@
-import productImg from "../assets/bracelets.png";
+import Spinner from "../../components/spinner";
 
 function Vendor({ vendor }) {
     const tbackground = vendor.logo ? `url(${vendor.logo})` : "#E6EAE7";
@@ -13,7 +13,13 @@ function VendorList({ data }) {
     return (
         <section className="vendors">
             <h3>Shop by vendors</h3>
-            <div>{data ? data.results.map((vendor) => <Vendor key={vendor.id} vendor={vendor} />) : <h3>No Vendors available</h3>}</div>
+            {
+                data ? (
+                    <div>{data.count ? data.results.map((vendor) => <Vendor key={vendor.id} vendor={vendor} />) : <p>There are no Vendors at the moment</p>}</div>
+                ) : (
+                    <Spinner />
+                )
+            }
         </section>
     );
 }
