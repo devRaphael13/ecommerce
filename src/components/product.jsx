@@ -24,7 +24,7 @@ function Product({ product }) {
             <small>{product.vendor.name}</small>
             <h3>{product.name}</h3>
             <div>
-                <div>{starMap}</div>
+                <div>{...starMap}</div>
                 <p>{product.reviews} reviews</p>
             </div>
 

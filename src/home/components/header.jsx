@@ -1,7 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 
 import { GoArrowRight } from "react-icons/go";
-import productImg from "../assets/shirt.png";
 import Spinner from "../../components/spinner";
 
 function Header({ data }) {
@@ -11,6 +10,18 @@ function Header({ data }) {
                 <Spinner padding_class="spinner-padding" />
             </article>
         );
+    }
+
+    const starMap = [];
+    let stars = data.stars;
+
+    for (let i = 0; i < 5; i++) {
+        if (stars) {
+            starMap.push(<FaStar className="yellow_star" />);
+            stars -= 1;
+        } else {
+            starMap.push(<FaStar className="star" />);
+        }
     }
 
     return (
@@ -29,20 +40,16 @@ function Header({ data }) {
 
                 <div className="featured-product">
                     <div>
-                        <small>Versace</small>
-                        <h3>Rose gold and black bracelets for Men</h3>
+                        <small>{data.vendor.name}</small>
+                        <h3>{data.name}</h3>
                         <div className="featured-product__review">
                             <div>
-                                <FaStar className="star" />
-                                <FaStar className="star" />
-                                <FaStar className="star" />
-                                <FaStar className="star" />
-                                <FaStar className="star" />
+                                {...starMap}
                             </div>
-                            <p>45 reviews</p>
+                            <p>{data.reviews}</p>
                         </div>
 
-                        <h2>$49.99</h2>
+                        <h2>${data.price/100}</h2>
                         <div className="featured-product__details">
                             <a href="">View more</a>
                             <GoArrowRight />
@@ -50,7 +57,7 @@ function Header({ data }) {
                     </div>
 
                     <div>
-                        <img src={productImg} alt="product image" />
+                        <img src={data.display_image} alt="product image" />
                     </div>
                 </div>
             </article>
