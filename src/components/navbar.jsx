@@ -6,28 +6,35 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 function NavBar() {
     const [size, setSize] = useState(window.innerWidth);
-    
+
     useEffect(() => {
         const menu_items = document.getElementsByClassName("items");
-        const menu = document.getElementById("menu")
+        const menu = document.getElementById("menu");
 
         for (let x of menu_items) {
             if (size < 720) {
                 x.style.display = "none";
-                menu.style.display = "block"
+                menu.style.display = "block";
             } else {
                 x.style.display = "block";
-                menu.style.display = "none"
+                menu.style.display = "none";
             }
         }
     }, [size]);
 
     window.addEventListener("resize", (e) => {
-        setSize(window.innerWidth)
+        setSize(window.innerWidth);
     });
+
+    // const dialog = document.getElementById("modal");
+    // dialog.showModal();
 
     return (
         <nav>
+            <dialog id="modal">
+                <h2>Hello People</h2>
+            </dialog>
+
             <ul>
                 <li>
                     <a href="#">

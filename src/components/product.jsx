@@ -16,7 +16,7 @@ function Product({ product }) {
     }
 
     return (
-        <article className="product">
+        <article className="product fade-in">
             <div>
                 <img src={product.display_image} alt="" />
             </div>

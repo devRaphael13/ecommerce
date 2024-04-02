@@ -26,7 +26,7 @@ function Header({ data }) {
 
     return (
         <section className="header">
-            <article className="featured-container">
+            <article className="featured-container fade-in">
                 <div className="featured-category">
                     <h1>SHOP Fashion Category</h1>
                     <p>

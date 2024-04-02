@@ -3,7 +3,7 @@ import Spinner from "../../components/spinner";
 
 function Category({ name }) {
     return (
-        <article className="category">
+        <article className="category fade-in">
             <h3>{name}</h3>
         </article>
     );
