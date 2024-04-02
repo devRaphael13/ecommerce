@@ -1,5 +1,4 @@
 import { FaStar } from "react-icons/fa6";
-import productImg from "../home/assets/bracelets.png";
 import Spinner from "./spinner";
 
 function Product({ product }) {

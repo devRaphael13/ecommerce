@@ -30,8 +30,7 @@ function Header({ data }) {
                 <div className="featured-category">
                     <h1>SHOP Fashion Category</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quo deserunt consequatur voluptatibus ratione nisi voluptatem, ullam veniam unde, sint perspiciatis, adipisci
-                        dolorum odit animi laboriosam! Quidem quam iusto rerum?
+                        { data.description }
                     </p>
                     <a className="btn" href="#">
                         View more
