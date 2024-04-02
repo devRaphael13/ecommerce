@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import Spinner from "./spinner";
 
 function NavBar() {
     const [size, setSize] = useState(window.innerWidth);
@@ -26,15 +27,8 @@ function NavBar() {
         setSize(window.innerWidth);
     });
 
-    // const dialog = document.getElementById("modal");
-    // dialog.showModal();
-
     return (
         <nav>
-            <dialog id="modal">
-                <h2>Hello People</h2>
-            </dialog>
-
             <ul>
                 <li>
                     <a href="#">
@@ -43,9 +37,6 @@ function NavBar() {
                 </li>
                 <li>
                     <a href="#">Products</a>
-                </li>
-                <li className="items">
-                    <a href="#">Category</a>
                 </li>
                 <li className="items">
                     <a href="#">Today's Deals</a>

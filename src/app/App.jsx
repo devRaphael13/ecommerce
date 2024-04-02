@@ -9,7 +9,7 @@ function App() {
         <div className="coming_soon">
             <div>
                 <h1>Coming Soon...</h1>
-                <p>I'm currently working on creating an E-commerce website. I'll be launching soon. Please take a look at my portfolio for the time being</p>
+                <p>I'm currently working on creating this E-commerce website. This page is coming soon or might not exist. Please take a look at my portfolio for the time being</p>
                 <a href="https://devraphael13.github.io/portfolio/">My Portfolio</a>
             </div>
 

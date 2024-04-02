@@ -19,10 +19,10 @@ function Home() {
     const [newProducts, setNewProducts] = useState(null);
     const [techProducts, setTechProducts] = useState(null);
     const [vendors, setVendors] = useState(null);
-    const [featured, setFeatured] = useState(null)
+    const [featured, setFeatured] = useState(null);
 
     useEffect(() => {
-        dataFetch("https://django-ecommerce-api.vercel.app/api/categories/", setCategories);
+        dataFetch("https://django-ecommerce-api.vercel.app/api/categories/?limit=100", setCategories);
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&ordering=-datetime_created", setNewProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&category=14", setTechProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/vendors/", setVendors);
@@ -46,10 +46,10 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <ProductList title="New Products" data={newProducts}/>
+            <ProductList title="New Products" data={newProducts} />
             <FashionList />
-            <ProductList title="Must have tech devices for you" name="test" data={techProducts}/>
-            <VendorList data={vendors}/>
+            <ProductList title="Must have tech devices for you" name="test" data={techProducts} />
+            <VendorList data={vendors} />
             <Footer />
         </main>
     );

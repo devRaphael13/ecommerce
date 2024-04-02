@@ -3,6 +3,7 @@
     --p-gray-darker: #C8D0CA;
     --s-pink: #F7EFD3;
     --accent: #f59b2b;
+    --color: #242A26;
     /* BE8247 */
 }
 
@@ -16,7 +17,7 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #242A26;
+    color: var(--color);
 }
 
 a {
@@ -26,6 +27,14 @@ a {
 
 li {
     list-style: none;
+}
+
+dialog {
+    box-sizing: inherit;
+    border: none;
+    font: inherit;
+    color: inherit;
+    outline: 2px solid var(--color);
 }
 
 h1 {
