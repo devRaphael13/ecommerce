@@ -12,7 +12,6 @@
     margin-top: 0;
     padding: 6rem;
     padding-bottom: 0;
-    border-radius: 0.25rem;
 }
 
 .featured-container {
@@ -79,6 +78,13 @@
     align-items: center;
     gap: 0.25rem;
     text-decoration: underline;
+}
+
+.home-content {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 /* Category Section  */

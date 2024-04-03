@@ -36,11 +36,7 @@ function ProductList({ title, data }) {
     return (
         <section className="product-section">
             <h3>{title}</h3>
-            {data ? (
-                <div className="product-list">{data.count ? data.results.map((product) => <Product key={product.id} product={product} />) : <p>No Products at the moment</p>}</div>
-            ) : (
-                <Spinner />
-            )}
+            {data ? <div className="product-list">{data.count ? data.results.map((product) => <Product key={product.id} product={product} />) : <p>No Products at the moment</p>}</div> : <Spinner />}
         </section>
     );
 }

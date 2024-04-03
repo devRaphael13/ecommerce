@@ -33,23 +33,25 @@ function Home() {
         <main>
             <NavBar />
             <Header data={featured} />
-            <Categories data={categories} />
-            <Deals />
-            <section>
-                <div className="shipping">
-                    <div>
-                        <h1>ECOMMERCE DELIVERS TO YOU</h1>
-                        <p>World-wide shipping for all products. We ship to over 100 countries and regions, get products shipped right to your door step.</p>
+            <div className="home-content">
+                <Categories data={categories} />
+                <Deals />
+                <section>
+                    <div className="shipping">
+                        <div>
+                            <h1>ECOMMERCE DELIVERS TO YOU</h1>
+                            <p>World-wide shipping for all products. We ship to over 100 countries and regions, get products shipped right to your door step.</p>
+                        </div>
+                        <div>
+                            <img src={ecommerce} alt="Shipping image" />
+                        </div>
                     </div>
-                    <div>
-                        <img src={ecommerce} alt="Shipping image" />
-                    </div>
-                </div>
-            </section>
-            <ProductList title="New Products" data={newProducts} />
-            <FashionList />
-            <ProductList title="Must have tech devices for you" name="test" data={techProducts} />
-            <VendorList data={vendors} />
+                </section>
+                <ProductList title="New Products" data={newProducts} />
+                <FashionList />
+                <ProductList title="Must have tech devices for you" name="test" data={techProducts} />
+                <VendorList data={vendors} />
+            </div>
             <Footer />
         </main>
     );

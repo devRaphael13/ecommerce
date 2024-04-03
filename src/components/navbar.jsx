@@ -4,6 +4,7 @@ import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import Spinner from "./spinner";
+import { Link } from "react-router-dom";
 
 function NavBar() {
     const [size, setSize] = useState(window.innerWidth);
@@ -31,12 +32,12 @@ function NavBar() {
         <nav>
             <ul>
                 <li>
-                    <a href="#">
+                    <Link to="/">
                         <h3>ECOMMERCE</h3>
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#">Products</a>
+                    <Link to="/products">Products</Link>
                 </li>
                 <li className="items">
                     <a href="#">Today's Deals</a>

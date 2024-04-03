@@ -29,14 +29,6 @@ li {
     list-style: none;
 }
 
-dialog {
-    box-sizing: inherit;
-    border: none;
-    font: inherit;
-    color: inherit;
-    outline: 2px solid var(--color);
-}
-
 h1 {
     font-size: xx-large;
     font-weight: bold;
@@ -70,10 +62,6 @@ ul {
     gap: 2rem;
 }
 
-section {
-    margin: 3rem 4rem;
-}
-
 /* Fade-in Animation */
 
 .fade-in {
@@ -93,14 +81,13 @@ section {
 /* Products  */
 
 .product-section h3 {
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
 }
 
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 0.25rem;
-    margin-top: 1rem;
 }
 
 .product {
@@ -208,10 +195,6 @@ footer h3 {
         gap: 1rem;
     }
 
-    section {
-        margin: 2rem;
-    }
-
     .spinner-margin {
         margin: 0 2rem;
     }
@@ -229,10 +212,6 @@ footer h3 {
 
     p {
         font-size: small;
-    }
-
-    section {
-        margin: 2rem 0.5rem;
     }
 
     .spinner-margin {
