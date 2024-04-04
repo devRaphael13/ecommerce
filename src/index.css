@@ -78,12 +78,6 @@ ul {
     }
 }
 
-/* Products  */
-
-.product-section h3 {
-    /* margin-bottom: 0.5rem; */
-}
-
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -203,7 +197,7 @@ footer h3 {
 @media screen and (max-width: 720px) {
 
     nav {
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
     ul {

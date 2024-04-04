@@ -3,12 +3,9 @@ import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import Spinner from "./spinner";
 import { Link } from "react-router-dom";
 
-function NavBar() {
-    const [size, setSize] = useState(window.innerWidth);
-
+function NavBar({size, setSize}) {
     useEffect(() => {
         const menu_items = document.getElementsByClassName("items");
         const menu = document.getElementById("menu");
