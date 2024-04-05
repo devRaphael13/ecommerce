@@ -22,7 +22,7 @@
 
 .shop main {
     margin-bottom: 1rem;
-}   
+}
 
 .shop-title {
     margin: 0 4rem;
@@ -33,20 +33,6 @@
     padding: 0 4rem;
     grid-template-columns: 1fr 3fr;
     gap: 1rem;
-}
-
-.ordering {
-    background-color: var(--p-gray);
-    padding: 1rem;
-    border-radius: 0.25rem;
-    display: flex;
-    margin-bottom: 0.5rem;
-    justify-content: space-between;
-}
-
-.ordering>div:first-child {
-    display: flex;
-    gap: 0.5rem;
 }
 
 .filter {
@@ -68,6 +54,21 @@
 
 }
 
+.ordering {
+    background-color: var(--p-gray);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+}
+
+.ordering>div:first-child {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
 .ordering button {
     background-color: var(--p-gray-darker);
     padding: 0.5rem;
@@ -75,14 +76,22 @@
 }
 
 @media screen and (max-width: 1024px) {
+    .shop aside {
+        gap: 0.5rem;
+    }
+
     .shop-content {
         padding: 0 2rem;
     }
 }
 
 @media screen and (max-width: 720px) {
+    .shop aside {
+        gap: 0.25rem;
+    }
     .shop-content {
         padding: 0 0.5rem;
         display: block;
     }
+
 }
