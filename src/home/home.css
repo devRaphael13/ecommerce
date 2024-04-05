@@ -81,7 +81,7 @@
 }
 
 .home-content {
-    padding: 4rem;
+    padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -248,10 +248,13 @@
 .vendors h3 {
     margin-bottom: 0.5rem;
 }
+
 /* For Tablets Devices */
 
 @media screen and (max-width: 1024px) {
-    .header {
+
+    .header,
+    .home-content {
         padding: 2rem;
     }
 
@@ -273,8 +276,8 @@
 
 /* For Mobile Devices */
 @media screen and (max-width: 720px) {
-    .header {
-        padding: 2rem 0.5rem;
+    .header, .home-content {
+        padding: 0.5rem;
     }
 
     .featured-category>a {
