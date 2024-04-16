@@ -5,7 +5,9 @@ import Description from "./components/description";
 import Reviews from "./components/reviews";
 import ProductList from "../components/product";
 import NavBar from "../components/navbar";
-import Footer from "../components/footer"
+import Footer from "../components/footer";
+
+import "./product.css";
 
 function ProductDetail() {
     const { state } = useLocation();
@@ -13,12 +15,14 @@ function ProductDetail() {
     return (
         <div className="productdetail">
             <NavBar />
-            <Detail product={state} />
-            <Description description={state.description} />
-            <Reviews product={state} />
-            <ProductList title="You May Also Like" data="" />
-            <ProductList title="More From Brand" data="" />
-            <Footer />
+            <div className="product-detail-container">
+                <Detail product={state} />
+                <Description description={state.description} />
+                <Reviews product={state} />
+                <ProductList title="You May Also Like" data="" />
+                <ProductList title={`More From ${state.vendor.name}`} data="" />
+                <Footer />
+            </div>
         </div>
     );
 }

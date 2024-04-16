@@ -25,6 +25,7 @@ function Shop() {
 
     return (
         <div className="shop">
+            <NavBar />
             <section className="shop-content">
                 {showFilter && <Filter data={categories} />}
                 <main>
