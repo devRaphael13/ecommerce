@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { FiFilter } from "react-icons/fi";
 
-function Ordering({ size, showFilter, setShowFilter }) {
+function Ordering({ showFilter, setShowFilter }) {
     useEffect(() => {
         const filterBtn = document.getElementById("filter");
         if (filterBtn) {
             filterBtn.addEventListener("click", () => {
-                if (size < 720) setShowFilter(!showFilter);
+                if (window.innerWidth < 720) setShowFilter(!showFilter);
             });
         }
     });
@@ -14,9 +14,9 @@ function Ordering({ size, showFilter, setShowFilter }) {
     return (
         <div className="ordering">
             <div>
-                {size < 720 && (
+                {window.innerWidth < 720 && (
                     <button id="filter">
-                        <HiOutlineMenuAlt3 />
+                        <FiFilter />
                     </button>
                 )}
 

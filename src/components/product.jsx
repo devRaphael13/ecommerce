@@ -1,33 +1,24 @@
-import { FaStar } from "react-icons/fa6";
 import Spinner from "./spinner";
+import { Link } from "react-router-dom";
+import { getStars } from "../utils";
 
 function Product({ product }) {
-    const starMap = [];
-    let stars = product.stars;
-
-    for (let i = 0; i < 5; i++) {
-        if (stars) {
-            starMap.push(<FaStar className="yellow_star" />);
-            stars -= 1;
-        } else {
-            starMap.push(<FaStar className="star" />);
-        }
-    }
-
     return (
         <article className="product fade-in">
-            <div>
-                <img src={product.display_image} alt="" />
-            </div>
+            <Link to={`/products/${product.id}`} state={product}>
+                <div>
+                    <img src={product.display_image} alt="" />
+                </div>
 
-            <small>{product.vendor.name}</small>
-            <h3>{product.name}</h3>
-            <div>
-                <div>{...starMap}</div>
-                <p>{product.reviews} reviews</p>
-            </div>
+                <small>{product.vendor.name}</small>
+                <h3>{product.name}</h3>
+                <div>
+                    <div>{...getStars(product.stars)}</div>
+                    <p>{product.reviews} reviews</p>
+                </div>
 
-            <h2>${product.price / 100}</h2>
+                <h2>${product.price / 100}</h2>
+            </Link>
         </article>
     );
 }

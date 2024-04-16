@@ -1,11 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-function NavBar({size, setSize}) {
+function NavBar() {
+    const [size, setSize] = useState(window.innerWidth);
+
     useEffect(() => {
         const menu_items = document.getElementsByClassName("items");
         const menu = document.getElementById("menu");

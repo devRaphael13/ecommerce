@@ -8,14 +8,13 @@ import Header from "./components/header";
 import ProductList from "../components/product";
 import VendorList from "./components/vendor";
 import Deals from "./components/deals";
-import dataFetch from "../utils";
+import { dataFetch } from "../utils";
 
 import "./home.css";
 
 import ecommerce from "./assets/shopping.png";
 
 function Home() {
-    const [size, setSize] = useState(window.innerWidth);
     const [categories, setCategories] = useState(null);
     const [newProducts, setNewProducts] = useState(null);
     const [techProducts, setTechProducts] = useState(null);
@@ -32,7 +31,7 @@ function Home() {
 
     return (
         <main>
-            <NavBar size={size} setSize={setSize} />
+            <NavBar/>
             <Header data={featured} />
             <div className="home-content">
                 <Categories data={categories} />
