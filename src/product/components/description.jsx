@@ -1,6 +1,6 @@
 function Description({description}) {
     return (
-        <section>
+        <section className="product-description">
             <h2>Product Details</h2>
             <p>{description}</p>
         </section>

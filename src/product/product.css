@@ -64,3 +64,14 @@
     border-radius: 0.125rem;
     cursor: pointer;
 }
+
+.product-description {
+    background: var(--p-gray);
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+.product-description>h2 {
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
