@@ -36,12 +36,10 @@ h1 {
 
 h2 {
     font-size: x-large;
-    font-weight: bolder;
 }
 
 h3 {
     font-size: larger;
-    font-weight: bolder;
 }
 
 button {
@@ -78,6 +76,10 @@ ul {
     }
 }
 
+.product-section>h2{
+    margin-bottom: 1rem;
+}
+
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -111,6 +113,12 @@ ul {
 .product small {
     text-transform: uppercase;
     opacity: 0.8;
+}
+
+.product-star-container {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0.25rem 0;
 }
 
 .star {

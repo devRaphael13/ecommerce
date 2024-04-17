@@ -4,7 +4,7 @@ function Fashion({ gender, gender_light, url, category, pronoun, image }) {
     return (
         <article className={`fashion ${gender}`}>
             <div>
-                <h3>Fashion styles for {pronoun} </h3>
+                <h2>Fashion styles for {pronoun} </h2>
                 <p>Shop {gender} clothings shoes and jwelleries</p>
 
                 <a href="#">

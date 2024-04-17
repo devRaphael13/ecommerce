@@ -12,7 +12,7 @@ function Vendor({ vendor }) {
 function VendorList({ data }) {
     return (
         <section className="vendors">
-            <h3>Shop by vendors</h3>
+            <h2>Shop by vendors</h2>
             {
                 data ? (
                     <div>{data.count ? data.results.map((vendor) => <Vendor key={vendor.id} vendor={vendor} />) : <p>There are no Vendors at the moment</p>}</div>

@@ -13,7 +13,7 @@ function Categories({ data }) {
     return (
         <section className="categories">
             <div>
-                <h3>Shop by Category</h3>
+                <h2>Shop by Category</h2>
                 <div className="categories__list">
                     <a href="">View more</a>
                     <GoArrowRight />

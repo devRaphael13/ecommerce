@@ -12,9 +12,9 @@ function Product({ product }) {
 
                 <small>{product.vendor.name}</small>
                 <h3>{product.name}</h3>
-                <div>
+                <div className="product-star-container">
                     <div>{...getStars(product.stars)}</div>
-                    <p>{product.reviews} reviews</p>
+                    <span>{product.reviews} reviews</span>
                 </div>
 
                 <h2>${product.price / 100}</h2>
@@ -26,7 +26,7 @@ function Product({ product }) {
 function ProductList({ title, data }) {
     return (
         <section className="product-section">
-            <h3>{title}</h3>
+            <h2>{title}</h2>
             {data ? <div className="product-list">{data.count ? data.results.map((product) => <Product key={product.id} product={product} />) : <p>No Products at the moment</p>}</div> : <Spinner />}
         </section>
     );

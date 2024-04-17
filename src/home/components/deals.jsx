@@ -4,7 +4,7 @@ function Deal({ name, text, image }) {
     return (
         <div className="deal">
             <div>
-                <h3>{name}</h3>
+                <h2>{name}</h2>
                 <p>{text}</p>
                 <div>
                     <a href="">See more</a>
