@@ -23,10 +23,7 @@ function Product({ product }) {
     );
 }
 
-function ProductList({ title, data, categoryFilter }) {
-    if (categoryFilter) {
-        console.log(categoryFilter)
-    }
+function ProductList({ title, data }) {
     return (
         <section className="product-section">
             <h2>{title}</h2>
