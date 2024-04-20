@@ -2,6 +2,7 @@ import { FaStar } from "react-icons/fa6";
 
 import { GoArrowRight } from "react-icons/go";
 import Spinner from "../../components/spinner";
+import { Link } from "react-router-dom";
 
 function Header({ data }) {
     if (!data) {
@@ -50,7 +51,7 @@ function Header({ data }) {
 
                         <h2>${data.price/100}</h2>
                         <div className="featured-product__details">
-                            <a href="">View more</a>
+                            <Link to="/products/2" state={data}>View more</Link>
                             <GoArrowRight />
                         </div>
                     </div>

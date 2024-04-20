@@ -1,4 +1,5 @@
 import { FiArrowRightCircle } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 function Fashion({ gender, gender_light, url, category, pronoun, image }) {
     return (
@@ -7,12 +8,12 @@ function Fashion({ gender, gender_light, url, category, pronoun, image }) {
                 <h2>Fashion styles for {pronoun} </h2>
                 <p>Shop {gender} clothings shoes and jwelleries</p>
 
-                <a href="#">
+                <Link to="/products">
                     <div className={`${gender_light}`}>
                         <p>View Top Products</p>
                         <FiArrowRightCircle />
                     </div>
-                </a>
+                </Link>
             </div>
         </article>
     );
@@ -21,8 +22,8 @@ function Fashion({ gender, gender_light, url, category, pronoun, image }) {
 function FashionList() {
     return (
         <section className="fashions">
-            <Fashion gender="male" gender_light="malelight" pronoun="Him"/>
-            <Fashion gender="female" gender_light="femalelight" pronoun="Her"/>
+            <Fashion gender="male" gender_light="malelight" pronoun="Him" />
+            <Fashion gender="female" gender_light="femalelight" pronoun="Her" />
         </section>
     );
 }

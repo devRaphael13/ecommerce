@@ -22,7 +22,7 @@ function Home() {
     const [featured, setFeatured] = useState(null);
 
     useEffect(() => {
-        dataFetch("https://django-ecommerce-api.vercel.app/api/categories/?limit=100", setCategories);
+        dataFetch("https://django-ecommerce-api.vercel.app/api/categories/?parent=true", setCategories);
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&ordering=-datetime_created", setNewProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&category=14", setTechProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/vendors/", setVendors);

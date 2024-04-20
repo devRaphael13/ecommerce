@@ -6,12 +6,18 @@ import { dataFetch } from "../utils";
 import Filter from "./components/filter";
 import Ordering from "./components/ordering";
 import "./shop.css";
+import { useLocation } from "react-router-dom";
 
 function Shop() {
     const [categories, setCategories] = useState(null);
     const [products, setProducts] = useState(null);
     const [showFilter, setShowFilter] = useState(true);
-
+    const { state }  = useLocation()
+    const [categoryFilter, setCategoryFilter] = useState(null)
+    const [vendorFilter, setVendorFilter] = useState(null)
+    const [priceFilter, setPriceFilter] = useState(null)
+    const [ratingFilter, setRatingFilter] = useState(null)
+    
     window.addEventListener("resize", () => {
         if (window.innerWidth < 720) {
             setShowFilter(true);
@@ -30,7 +36,7 @@ function Shop() {
                 {showFilter && <Filter data={categories} />}
                 <main>
                     <Ordering showFilter={showFilter} setShowFilter={setShowFilter} />
-                    <ProductList data={products} />
+                    <ProductList data={products} {...{categoryFilter, vendorFilter, priceFilter, ratingFilter} }/>
                 </main>
             </section>
         </div>

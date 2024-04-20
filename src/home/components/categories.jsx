@@ -1,11 +1,14 @@
 import { GoArrowRight } from "react-icons/go";
 import Spinner from "../../components/spinner";
+import { Link } from "react-router-dom";
 
-function Category({ name }) {
+function Category({ categoryId, name }) {
     return (
-        <article className="category fade-in">
-            <h3>{name}</h3>
-        </article>
+        <Link to="/products" state={categoryId}>
+            <article className="category fade-in">
+                <h3>{name}</h3>
+            </article>
+        </Link>
     );
 }
 
@@ -20,7 +23,9 @@ function Categories({ data }) {
                 </div>
             </div>
             {data ? (
-                <div className="category-container">{data.count ? data.results.map((cat) => <Category key={cat.id} name={cat.name} />) : <p>There are no Categories at the moment</p>}</div>
+                <div className="category-container">
+                    {data.count ? data.results.map((cat) => <Category key={cat.id} categoryId={cat.id} name={cat.name} />) : <p>There are no Categories at the moment</p>}
+                </div>
             ) : (
                 <Spinner />
             )}
