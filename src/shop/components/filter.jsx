@@ -49,7 +49,7 @@ function Price({ priceFilter }) {
             <label id="price-label" htmlFor="price">
                 $ 0
             </label>
-            <input id="price" name="price" type="range" min="100" step="100" max="99999" />
+            <input id="price" name="price" type="range" min="1" step="1" max="99999" />
         </div>
     );
 }
