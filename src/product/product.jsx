@@ -29,9 +29,9 @@ function ProductDetail() {
     return (
         <div className="productdetail">
             <NavBar />
-            <div className="product-detail-container">
+            <div className="product-detail-container fade-in">
                 <Detail product={product} />
-                <section className="product-description">
+                <section className="product-description fade-in">
                     <h2>Product Details</h2>
                     {product ? <p>{product.description}</p> : <Spinner />}
                 </section>

@@ -20,6 +20,27 @@
     gap: 1rem;
 }
 
+.filter-btn {
+    border: 2px solid var(--accent);
+    width: 100%;
+    padding: 0.5rem 0;
+    color: var(--accent);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.star-container {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.star-select {
+    padding: 0.125rem 0;
+    margin: 0.125rem 0;
+}
+
 .shop main {
     margin-bottom: 1rem;
 }

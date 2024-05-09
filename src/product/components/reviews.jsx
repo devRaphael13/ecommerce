@@ -3,7 +3,7 @@ import { getStars } from "../../utils";
 
 function Reviews({ product, reviews }) {
     return (
-        <section className="customer-section">
+        <section className="customer-section fade-in">
             <h2>Verified Customer Reviews</h2>
             <div className="customer-reviews">
                 {reviews ? (

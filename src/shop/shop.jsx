@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import NavBar from "../components/navbar";
 import ProductList from "../components/product";
@@ -12,12 +12,11 @@ function Shop() {
     const [categories, setCategories] = useState(null);
     const [products, setProducts] = useState(null);
     const [showFilter, setShowFilter] = useState(true);
-    const { state }  = useLocation()
-    const [categoryFilter, setCategoryFilter] = useState(null)
-    const [vendorFilter, setVendorFilter] = useState(null)
-    const [priceFilter, setPriceFilter] = useState(null)
-    const [ratingFilter, setRatingFilter] = useState(null)
     
+    const categoryFilter = useRef(null)
+    const priceFilter = useRef(null)
+    const ratingFilter = useRef(null)
+
     window.addEventListener("resize", () => {
         if (window.innerWidth < 720) {
             setShowFilter(true);
@@ -27,16 +26,21 @@ function Shop() {
     useEffect(() => {
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/", setProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/categories/?parent=true", setCategories);
+        
+        const btn = document.getElementById("btn")
+        btn.addEventListener("click", (e) => {
+            console.log(categoryFilter.current, priceFilter.current, ratingFilter.current)
+        })
     }, []);
 
     return (
         <div className="shop">
             <NavBar />
             <section className="shop-content">
-                {showFilter && <Filter data={categories} />}
+                {showFilter && <Filter data={categories} {...{categoryFilter, priceFilter, ratingFilter}}/>}
                 <main>
                     <Ordering showFilter={showFilter} setShowFilter={setShowFilter} />
-                    <ProductList data={products} {...{categoryFilter, vendorFilter, priceFilter, ratingFilter} }/>
+                    <ProductList data={products} />
                 </main>
             </section>
         </div>

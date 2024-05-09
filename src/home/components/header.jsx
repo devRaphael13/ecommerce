@@ -33,9 +33,10 @@ function Header({ data }) {
                     <p>
                         { data.description }
                     </p>
-                    <a className="btn" href="#">
-                        View more
-                    </a>
+
+                    <Link className="btn" to="/products">
+                        View More
+                    </Link>
                 </div>
 
                 <div className="featured-product">
