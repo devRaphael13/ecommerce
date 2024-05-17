@@ -52,6 +52,13 @@ function Shop() {
 
     }, [products]);
 
+    useEffect(() => {
+        const clear = document.getElementById("clear-btn");
+        clear.addEventListener("click", (e) => {
+            setFilteredProducts(null)
+        })
+    })
+
     return (
         <div className="shop">
             <NavBar />

@@ -2,7 +2,7 @@ import { FaStar } from "react-icons/fa6";
 import Spinner from "../../components/spinner";
 import { useEffect } from "react";
 
-function Category({categories, categoryFilter }) {
+function Category({ categories, categoryFilter }) {
     const cSelect = document.getElementsByClassName("c-select");
 
     for (let choice of cSelect) {
@@ -110,12 +110,18 @@ function Rating({ ratingFilter }) {
 function Filter({ data, categoryFilter, priceFilter, ratingFilter }) {
     return (
         <aside>
-            <Category categories={data} categoryFilter={categoryFilter}/>
+            <Category categories={data} categoryFilter={categoryFilter} />
             <Price priceFilter={priceFilter} />
             <Rating ratingFilter={ratingFilter} />
-            <button id="btn" className="filter-btn">
-                APPLY
-            </button>
+            <div>
+                <button id="btn" className="apply-btn">
+                    APPLY
+                </button>
+                <button id="clear-btn" className="clear-btn">
+                    CLEAR
+                </button>
+            </div>
+
         </aside>
     );
 }

@@ -20,7 +20,8 @@
     gap: 1rem;
 }
 
-.filter-btn {
+.apply-btn,
+.clear-btn {
     border: 2px solid var(--accent);
     width: 100%;
     padding: 0.5rem 0;
@@ -28,6 +29,12 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 0.25rem;
+}
+
+.clear-btn {
+    border-color: #4E5B52;
+    color: #4E5B52;
+    margin-top: 0.5rem;
 }
 
 .star-container {
@@ -110,6 +117,7 @@
     .shop aside {
         gap: 0.25rem;
     }
+
     .shop-content {
         padding: 0 0.5rem;
         display: block;
