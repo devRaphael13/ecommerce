@@ -6,7 +6,6 @@ import { dataFetch } from "../utils";
 import Filter from "./components/filter";
 import Ordering from "./components/ordering";
 import "./shop.css";
-import { useLocation } from "react-router-dom";
 
 function Shop() {
     const [categories, setCategories] = useState(null);
@@ -24,40 +23,49 @@ function Shop() {
         }
     });
 
+    // Fetch all products
+
     useEffect(() => {
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/", setProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/categories/?parent=true", setCategories);
+    });
 
-        const btn = document.getElementById("btn");
-        btn.addEventListener("click", (e) => {
-            
-            if (products) {
-                let filtered = products
-                let results = filtered.results
-
-                if (categoryFilter.current) {
-                    results = results.filter((prod) => prod.category.id == categoryFilter.current);
-                }
-                if (priceFilter.current) {
-                    results = results.filter((prod) => prod.price >= priceFilter.current)
-                }
-                
-                if (ratingFilter.current) {
-                    results = results.filter((prod) => prod.stars >= ratingFilter.current)
-                }
-                filtered.results = results
-                setFilteredProducts(filtered)
-            }
-        });
-
-    }, [products]);
+    // Filter
 
     useEffect(() => {
         const clear = document.getElementById("clear-btn");
         clear.addEventListener("click", (e) => {
-            setFilteredProducts(null)
-        })
-    })
+            categoryFilter.current = null;
+            priceFilter.current = null;
+            ratingFilter.current = null;
+            setFilteredProducts(null);
+        });
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", (e) => {
+            let filter_str = "?";
+
+            if (categoryFilter.current) {
+                filter_str = filter_str.concat(`category=${categoryFilter.current}`);
+            }
+
+            if (priceFilter.current) {
+            }
+
+            if (ratingFilter.current) {
+            }
+
+            dataFetch(`https://django-ecommerce-api.vercel.app/api/products/${filter_str}`, setFilteredProducts);
+        });
+    }, [filteredProducts]);
+
+    // Ordering
+
+    useEffect(() => {
+        const defaultBtn = document.getElementById("default-btn");
+        const ascBtn = document.getElementById("asc-btn");
+        const descBtn = document.getElementById("desc-btn");
+    });
 
     return (
         <div className="shop">

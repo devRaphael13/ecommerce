@@ -98,9 +98,18 @@
 
 
 .ordering button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
     background-color: var(--p-gray-darker);
+    border: 1px solid var(--p-gray-darker);
     padding: 0.5rem;
     border-radius: 0.125rem;
+    cursor: pointer;
+}
+
+.ordering button:focus {
+    border-color: #242a24;
 }
 
 @media screen and (max-width: 1024px) {
