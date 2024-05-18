@@ -49,7 +49,7 @@ function Price({ priceFilter }) {
             <label id="price-label" htmlFor="price">
                 $ 0
             </label>
-            <input id="price" name="price" type="range" min="1" step="1" max="99999" />
+            <input id="price" name="price" type="range" min="1" step="1" max="999" />
         </div>
     );
 }
@@ -69,17 +69,6 @@ function Rating({ ratingFilter }) {
             <h3>Rating</h3>
             <div>
                 <div className="star-container">
-                    <input type="radio" value="5" name="star-filter" className="star-filter" />
-                    <div className="star-select">
-                        <FaStar className="yellow_star" />
-                        <FaStar className="yellow_star" />
-                        <FaStar className="yellow_star" />
-                        <FaStar className="yellow_star" />
-                        <FaStar className="yellow_star" />
-                    </div>
-                </div>
-
-                <div className="star-container">
                     <input type="radio" value="4" name="star-filter" className="star-filter" />
                     <div className="star-select">
                         <FaStar className="yellow_star" />
@@ -97,6 +86,18 @@ function Rating({ ratingFilter }) {
                         <FaStar className="yellow_star" />
                         <FaStar className="yellow_star" />
                         <FaStar className="yellow_star" />
+                        <FaStar className="star" />
+                        <FaStar className="star" />
+                        <span> & above</span>
+                    </div>
+                </div>
+
+                <div className="star-container">
+                    <input type="radio" value="2" name="star-filter" className="star-filter" />
+                    <div className="star-select">
+                        <FaStar className="yellow_star" />
+                        <FaStar className="yellow_star" />
+                        <FaStar className="star" />
                         <FaStar className="star" />
                         <FaStar className="star" />
                         <span> & above</span>

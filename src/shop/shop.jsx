@@ -44,16 +44,13 @@ function Shop() {
         const btn = document.getElementById("btn");
         btn.addEventListener("click", (e) => {
             let filter_str = "?";
+            let query_param = [];
 
-            if (categoryFilter.current) {
-                filter_str = filter_str.concat(`category=${categoryFilter.current}`);
-            }
+            if (categoryFilter.current) query_param.push(`category=${categoryFilter.current}`);
+            if (priceFilter.current) query_param.push(`price_lte=${priceFilter.current * 100}`);
+            if (ratingFilter.current) query_param.push(`stars_gte=${ratingFilter.current}`);
 
-            if (priceFilter.current) {
-            }
-
-            if (ratingFilter.current) {
-            }
+            filter_str += query_param.length > 1 ? query_param[0] : query_param.join("&")
 
             dataFetch(`https://django-ecommerce-api.vercel.app/api/products/${filter_str}`, setFilteredProducts);
         });
