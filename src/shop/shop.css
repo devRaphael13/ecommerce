@@ -21,7 +21,8 @@
 }
 
 .apply-btn,
-.clear-btn {
+.clear-btn,
+.load-more {
     border: 2px solid var(--accent);
     width: 100%;
     padding: 0.5rem 0;
@@ -31,7 +32,8 @@
     border-radius: 0.25rem;
 }
 
-.clear-btn {
+.clear-btn,
+.load-more {
     border-color: #4E5B52;
     color: #4E5B52;
     margin-top: 0.5rem;
@@ -89,6 +91,7 @@
     display: flex;
     margin-bottom: 0.5rem;
     justify-content: space-between;
+    overflow: auto;
 }
 
 .ordering>div:first-child {
@@ -130,6 +133,10 @@
     .shop-content {
         padding: 0 0.5rem;
         display: block;
+    }
+
+    .ordering {
+        padding: 0.75rem;
     }
 
 }

@@ -11,7 +11,7 @@ function Shop() {
     const [categories, setCategories] = useState(null);
     const [products, setProducts] = useState(null);
     const [showFilter, setShowFilter] = useState(true);
-    
+
     const categoryFilter = useRef(null);
     const priceFilter = useRef(null);
     const ratingFilter = useRef(null);
@@ -22,9 +22,9 @@ function Shop() {
             setShowFilter(true);
         }
     });
-    
+
     // Fetch all products
-    
+
     useEffect(() => {
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/", setProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/categories/?parent=true", setCategories);
@@ -32,12 +32,25 @@ function Shop() {
 
     // Set Default Products
     useEffect(() => {
-        if (defaultProducts.current) return
-        else defaultProducts.current = products
-    }, [products])
-    
+        if (defaultProducts.current) return;
+        else defaultProducts.current = products;
+    }, [products]);
+
+    // Load more
+    useEffect(() => {
+        const loadMore = document.getElementById("load-more");
+
+        loadMore.addEventListener("click", (e) => {
+            products && products.next && dataFetch(products.next, updateProducts)
+        }) 
+    });
+
+    const updateProducts = (data) => {
+        setProducts({ ...products, results: [...products.results, ...data.results], next: data.next, previous: data.previous, count: products.count + data.count });
+    };
+
     // Filter
-    
+
     useEffect(() => {
         const clear = document.getElementById("clear-btn");
         const btn = document.getElementById("btn");
@@ -48,7 +61,7 @@ function Shop() {
             ratingFilter.current = null;
             setProducts(defaultProducts.current);
         });
-        
+
         btn.addEventListener("click", (e) => {
             let filter_str = "?";
             let query_param = [];
@@ -56,49 +69,50 @@ function Shop() {
             if (categoryFilter.current) query_param.push(`category=${categoryFilter.current}`);
             if (priceFilter.current) query_param.push(`price_lte=${priceFilter.current * 100}`);
             if (ratingFilter.current) query_param.push(`stars_gte=${ratingFilter.current}`);
-            
-            filter_str += query_param.length > 1 ? query_param[0] : query_param.join("&")
+
+            filter_str += query_param.length > 1 ? query_param[0] : query_param.join("&");
             dataFetch(`https://django-ecommerce-api.vercel.app/api/products/${filter_str}`, setProducts);
         });
     }, [products]);
-    
+
     // Ordering
-    
+
     useEffect(() => {
         const defaultBtn = document.getElementById("default-btn");
         const ascBtn = document.getElementById("asc-btn");
         const descBtn = document.getElementById("desc-btn");
-        
-        const productCopy = {...products}
+
+        const productCopy = { ...products };
 
         // Ascending order
-        
+
         ascBtn.addEventListener("click", (e) => {
-            let res = [...products?.results]
-            res.sort(compareFn)
-            setProducts({...products, results: res})
-        })
-        
+            let res = [...products?.results];
+            res.sort(compareFn);
+            setProducts({ ...products, results: res });
+        });
+
         // Descending order
-        
+
         descBtn.addEventListener("click", (e) => {
-            let res = [...products?.results]
-            res.sort(compareFn)
-            res.reverse()
-            setProducts({...products, results: res})
-        })
-        
+            let res = [...products?.results];
+            res.sort(compareFn);
+            res.reverse();
+            setProducts({ ...products, results: res });
+        });
+
         const compareFn = (a, b) => {
-            if (a.name < b.name) return -1
-            else return 1
-        }
-        
+            if (a.name < b.name) return -1;
+            else return 1;
+        };
+
         // Default order
 
-        defaultBtn.addEventListener("click", (e) => {setProducts(productCopy)})
-        
+        defaultBtn.addEventListener("click", (e) => {
+            setProducts(productCopy);
+        });
     }, [products]);
-    
+
     return (
         <div className="shop">
             <NavBar />
@@ -107,6 +121,9 @@ function Shop() {
                 <main>
                     <Ordering showFilter={showFilter} setShowFilter={setShowFilter} />
                     <ProductList data={products} />
+                    <button id="load-more" className="load-more">
+                        LOAD MORE
+                    </button>
                 </main>
             </section>
         </div>
