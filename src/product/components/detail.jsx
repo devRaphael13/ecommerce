@@ -15,6 +15,7 @@ function Detail({ product }) {
                         <div>{/* Baby images for scrolling */}</div>
                         
                     </div>
+                    
                     <div>
                         <h2 className="product-name">{product.name}</h2>
                         <h2>${product.price / 100}</h2>

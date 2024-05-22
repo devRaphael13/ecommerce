@@ -15,17 +15,20 @@
 }
 
 .product-detail-container>main> :last-child {
-    border-radius: 0.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
     background: var(--p-gray);
     padding: 2rem;
-    width: 100%;
+    width: 70%;
 }
 
 .product-detail-image {
-    border: 1px solid var(--p-gray)
+    border: 1px solid var(--p-gray);
+    padding: 0.5rem;
+    width: 30%;
+    display: flex;
+    justify-content: center;
 }
 
 .product-detail-image>div {
