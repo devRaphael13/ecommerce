@@ -27,8 +27,6 @@
     border: 1px solid var(--p-gray);
     padding: 0.5rem;
     width: 30%;
-    display: flex;
-    justify-content: center;
 }
 
 .product-detail-image>div {
@@ -36,16 +34,24 @@
 }
 
 .product-detail-image :first-child {
+    display: flex;
+    justify-content: center;
     margin-left: 0.25rem;
 }
 
 .product-detail-image :last-child {
-    margin-right: 0.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr
 }
 
 .product-detail-image img {
     width: 250px;
     height: 300px;
+}
+
+.product-detail-image :last-child>img {
+    width: 70px;
+    height: 70px;
 }
 
 .product-detail-container>section {

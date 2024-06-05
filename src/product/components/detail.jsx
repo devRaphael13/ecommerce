@@ -11,11 +11,14 @@ function Detail({ product }) {
                         <div>
                             <img src={product.display_image} alt="Product image" />
                         </div>
-
-                        <div>{/* Baby images for scrolling */}</div>
-                        
+                        <div>
+                            <img src={product.display_image} alt="Product image" />
+                            <img src={product.display_image} alt="Product image" />
+                            <img src={product.display_image} alt="Product image" />
+                            <img src={product.display_image} alt="Product image" />
+                        </div>
                     </div>
-                    
+
                     <div>
                         <h2 className="product-name">{product.name}</h2>
                         <h2>${product.price / 100}</h2>
