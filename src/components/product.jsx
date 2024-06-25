@@ -10,14 +10,16 @@ function Product({ product }) {
                     <img src={product.display_image} alt="" />
                 </div>
 
-                <small>{product.vendor.name}</small>
-                <h3>{product.name}</h3>
-                <div className="product-star-container">
-                    <div>{...getStars(product.stars)}</div>
-                    <span>{product.reviews} reviews</span>
-                </div>
+                <div className="product-info">
+                    <small>{product.vendor.name}</small>
+                    <h3>{product.name}</h3>
+                    <div className="product-star-container">
+                        <div>{...getStars(product.stars)}</div>
+                        <span>{product.reviews} reviews</span>
+                    </div>
 
-                <h2>${product.price / 100}</h2>
+                    <h2>${product.price / 100}</h2>
+                </div>
             </Link>
         </article>
     );
