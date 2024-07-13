@@ -16,14 +16,20 @@ function ProductDetail() {
     const [vendorProducts, setVendorProducts] = useState(null);
     const [categoryProducts, setCategoryProducts] = useState(null);
     const [product, setProduct] = useState(state);
-    const [reviews, setReviews] = useState(null)
+    const [reviews, setReviews] = useState(null);
 
     useEffect(() => {
         if (product) {
             dataFetch(`https://django-ecommerce-api.vercel.app/api/products/?category=${product.category.id}`, setCategoryProducts);
             dataFetch(`https://django-ecommerce-api.vercel.app/api/products/?vendor=${product.vendor.id}`, setVendorProducts);
             dataFetch(`https://django-ecommerce-api.vercel.app/api/reviews/?product=${productId}`, setReviews)
-        } else dataFetch(`https://django-ecommerce-api.vercel.app/api/products/${productId}`, setProduct);
+        } else {
+            dataFetch(`https://django-ecommerce-api.vercel.app/api/products/${productId}`, setProduct);
+        }
+
+        if (product.id != productId) {
+            window.location.reload()
+        }
     }, [product, productId]);
 
     return (
