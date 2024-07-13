@@ -21,7 +21,7 @@ function Reviews({ product, reviews }) {
 
                             <div>
                                 {reviews.results.map((rev) => (
-                                    <div className="comment">
+                                    <div key={rev.id} className="comment">
                                         <div>{...getStars(rev.stars)}</div>
                                         <p>{rev.review}</p>
                                     </div>

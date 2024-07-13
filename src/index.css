@@ -233,12 +233,7 @@ footer h3 {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .product {
-        padding: 0.5rem;
-    }
-
-    .product img {
-        width: 100px;
-        height: 100px;
+    .product-info {
+        padding: 0.25rem 0.5rem;
     }
 }
