@@ -30,6 +30,7 @@ function ProductDetail() {
         if (product.id != productId) {
             window.location.reload()
         }
+        
     }, [product, productId]);
 
     return (

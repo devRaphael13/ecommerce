@@ -19,7 +19,7 @@ function Detail({ product }) {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="product-detail-info">
                         <h2 className="product-name">{product.name}</h2>
                         <h2>${product.price / 100}</h2>
                         {product.is_available ? <p>In Stock</p> : <p>Out Of Stock</p>}
