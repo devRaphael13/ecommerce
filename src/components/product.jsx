@@ -34,4 +34,4 @@ function ProductList({ title, data }) {
     );
 }
 
-export default ProductList;
+export {ProductList, Product};

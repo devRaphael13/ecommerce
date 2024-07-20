@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import NavBar from "../components/navbar";
-import ProductList from "../components/product";
+import { ProductList } from "../components/product";
 import { dataFetch } from "../utils";
 import Filter from "./components/filter";
 import Ordering from "./components/ordering";
@@ -41,8 +41,8 @@ function Shop() {
         const loadMore = document.getElementById("load-more");
 
         loadMore.addEventListener("click", (e) => {
-            products && products.next && dataFetch(products.next, updateProducts)
-        }) 
+            products && products.next && dataFetch(products.next, updateProducts);
+        });
     });
 
     const updateProducts = (data) => {

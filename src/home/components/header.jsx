@@ -1,6 +1,8 @@
 import { FaStar } from "react-icons/fa6";
 
 import { GoArrowRight } from "react-icons/go";
+import {Product} from "../../components/product";
+
 import Spinner from "../../components/spinner";
 import { Link } from "react-router-dom";
 
@@ -29,9 +31,9 @@ function Header({ data }) {
         <section className="header">
             <article className="featured-container fade-in">
                 <div className="featured-category">
-                    <h1>SHOP Fashion Category</h1>
+                    <h1>Discover Our BestSellers</h1>
                     <p>
-                        { data.description }
+                    Revamp your wardrobe with our handpicked selection of bestsellers. From chic dresses to trendy accessories, find the perfect pieces to elevate your style. Our customers' favorites are sure to become yours too!
                     </p>
 
                     <Link className="btn" to="/products">
@@ -40,26 +42,7 @@ function Header({ data }) {
                 </div>
 
                 <div className="featured-product">
-                    <div>
-                        <small>{data.vendor.name}</small>
-                        <h3>{data.name}</h3>
-                        <div className="featured-product__review">
-                            <div>
-                                {...starMap}
-                            </div>
-                            <p>{data.reviews}</p>
-                        </div>
-
-                        <h2>${data.price/100}</h2>
-                        <div className="featured-product__details">
-                            <Link to="/products/2" state={data}>View more</Link>
-                            <GoArrowRight />
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src={data.display_image} alt="product image" />
-                    </div>
+                    {/* Use product component here  */}
                 </div>
             </article>
         </section>

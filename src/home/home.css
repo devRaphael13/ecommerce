@@ -38,46 +38,6 @@
 .featured-product {
     display: flex;
     gap: 0.5rem;
-    position: relative;
-}
-
-.featured-product>div:first-child {
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 0.25rem;
-    padding: 1rem;
-    width: 50%;
-    margin-top: 4rem;
-    z-index: 1;
-}
-
-.featured-product img {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    right: 0;
-    bottom: 5%;
-}
-
-.featured-product__review {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.featured-product small {
-    text-transform: uppercase;
-    opacity: 0.7;
-}
-
-.featured-product h3,
-.featured-product h2 {
-    margin: 0.5rem 0;
-}
-
-.featured-product__details {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    text-decoration: underline;
 }
 
 .home-content {

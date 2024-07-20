@@ -5,7 +5,7 @@ import NavBar from "../components/navbar";
 import Categories from "./components/categories";
 import FashionList from "./components/fashion";
 import Header from "./components/header";
-import ProductList from "../components/product";
+import {ProductList} from "../components/product";
 import VendorList from "./components/vendor";
 import Deals from "./components/deals";
 import { dataFetch } from "../utils";
@@ -26,7 +26,7 @@ function Home() {
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&ordering=-datetime_created", setNewProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/products/?limit=6&category=14", setTechProducts);
         dataFetch("https://django-ecommerce-api.vercel.app/api/vendors/", setVendors);
-        dataFetch("https://django-ecommerce-api.vercel.app/api/products/2", setFeatured);
+        dataFetch("https://django-ecommerce-api.vercel.app/api/products/?featured=true", setFeatured);
     }, []);
 
     return (

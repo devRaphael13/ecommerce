@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import Detail from "./components/detail";
 import Reviews from "./components/reviews";
-import ProductList from "../components/product";
+import {ProductList} from "../components/product";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Spinner from "../components/spinner";
