@@ -129,6 +129,10 @@ ul {
     gap: 1rem;
 }
 
+.featured-slide {
+    background: #DCE1DD;
+}
+
 .star {
     fill: var(--p-gray-darker);
 }

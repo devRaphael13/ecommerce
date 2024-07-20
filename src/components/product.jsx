@@ -2,9 +2,9 @@ import Spinner from "./spinner";
 import { Link } from "react-router-dom";
 import { getStars } from "../utils";
 
-function Product({ product }) {
+function Product({ product, featuredSlide}) {
     return (
-        <article className="product fade-in">
+        <article className={`product fade-in ${featuredSlide}`}>
             <Link to={`/products/${product.id}`} state={product}>
                 <div>
                     <img src={product.display_image} alt="" />
