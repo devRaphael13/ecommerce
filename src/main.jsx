@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./index.css";
 import routes from "./routes";
 

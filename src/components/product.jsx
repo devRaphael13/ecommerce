@@ -7,7 +7,7 @@ function Product({ product, featuredSlide}) {
         <article className={`product fade-in ${featuredSlide}`}>
             <Link to={`/products/${product.id}`} state={product}>
                 <div>
-                    <img src={product.display_image} alt="" />
+                    <img style={{"width": "100%"}} src={product.display_image} alt="" />
                 </div>
 
                 <div className="product-info">

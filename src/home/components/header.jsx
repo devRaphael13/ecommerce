@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
 
 import { FaStar } from "react-icons/fa6";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
-import { GoArrowRight } from "react-icons/go";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
 import { Product } from "../../components/product";
 import Spinner from "../../components/spinner";
 
@@ -49,21 +46,27 @@ function Header({ data }) {
 
                 <div className="featured-product">
                     <Swiper
-                        spaceBetween={5}
+                        spaceBetween={9}
                         slidesPerView={3}
                         loop={true}
                         pagination={{
                             dynamicBullets: true,
                         }}
+
                         autoplay={{
                             delay: 2500,
-                            disableOnInteraction: false,
+                            disableOnInteraction: false, 
                         }}
-                        modules={[Autoplay, Pagination]}
+                        
+                        modules={[Pagination, Autoplay]}
                         style={{
                             "--swiper-pagination-color": "#F59B2B",
                         }}
-                    >
+                        centeredSlides={true}
+                        breakpoints={{
+                            320: { slidesPerView: "auto", spaceBetween: 9},
+                          }}>
+
                         {data.results.map((product) => (
                             <SwiperSlide key={product.id}>
                                 <Product product={product} featuredSlide="featured-slide" />
