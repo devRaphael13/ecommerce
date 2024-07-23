@@ -40,7 +40,7 @@ function Header({ data }) {
                     </p>
 
                     <Link className="btn" to="/products">
-                        View More
+                        VIEW MORE
                     </Link>
                 </div>
 
